@@ -123,6 +123,3 @@ def send():
 
 if __name__ == "__main__":
     app.run(debug=True)
-else:
-    # uwsgi prefers the full name
-    application = app
