@@ -104,7 +104,7 @@ def send():
     if not all(i in request.form for i in ("template", "to", "subject")):
         return abort(400)
 
-    context = {k: request.form[k][0] for k in request.form if request.form[k] and k != "template"}
+    context = {k: request.form[k] for k in request.form if request.form[k] and k != "template"}
     context["logo_cid"] = "cid:" + LOGO_CID
 
     email = format_email(request.form["template"], context)
